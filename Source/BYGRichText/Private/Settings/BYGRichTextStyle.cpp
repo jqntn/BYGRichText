@@ -37,14 +37,26 @@ void UBYGRichTextStyle::SortProperties()
 	TArray<UBYGRichTextPropertyBase*> NewProperties = Properties;
 	NewProperties.StableSort( []( const UBYGRichTextPropertyBase& A, const UBYGRichTextPropertyBase& B )
 	{
+		if(!&A || !&B)
+		{
+            // Just in case something is null
+			return false;
+		}
 		const int32 OrderA = A.GetClass()->GetIntMetaData( "DisplayOrder" );
 		const int32 OrderB = B.GetClass()->GetIntMetaData( "DisplayOrder" );
 		if ( OrderA == OrderB )
 		{
 			if ( A.GetClass() == B.GetClass() )
 			{
-				UE_LOG( LogTemp, Warning, TEXT( "Duplicate class!" ) );
+				UE_LOG( LogTemp, Warning, TEXT( "Duplicate class! " ) );
 			}
+
+            //sort by class name to ensure a stable sort
+
+			FString NameA = A.GetClass()->GetName();
+			FString NameB = B.GetClass()->GetName();
+
+			return NameA < NameB;
 		}
 		return OrderA < OrderB;
 	} );
@@ -61,7 +73,7 @@ void UBYGRichTextStyle::SortProperties()
 	if ( bSomethingChanged )
 	{
 		UE_LOG( LogTemp, Warning, TEXT( "Sorting reordered something" ) );
-
+        Properties = NewProperties;
 	}
 #endif
 }
