@@ -46,12 +46,12 @@ public:
 protected:
 	void OnPropertyValueChanged();
 
-	class UBYGRichTextBlock* RichTextBlock = nullptr;
-	class UBYGRichTextStylesheet* Stylesheet = nullptr;
+	TObjectPtr<class UBYGRichTextBlock> RichTextBlock = nullptr;
+	TObjectPtr<class UBYGRichTextStylesheet> Stylesheet = nullptr;
 
 	TWeakObjectPtr<UBYGRichTextStylesheet> OwnerStylesheet;
 	TWeakObjectPtr<UBYGRichTextStyle> OwnerTextStyle;
-	UBYGRichTextStyle* LocalTextStyleInstance = nullptr;
+	TObjectPtr<class UBYGRichTextStyle> LocalTextStyleInstance = nullptr;
 	int32 Index;
 	FSimpleDelegate OnRegenerateChildren;
 };

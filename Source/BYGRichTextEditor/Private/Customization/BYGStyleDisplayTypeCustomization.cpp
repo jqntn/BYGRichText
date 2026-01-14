@@ -28,7 +28,7 @@ void FBYGStyleDisplayTypeCustomization::CustomizeHeader( TSharedRef<IPropertyHan
 		.Padding( OuterPadding )
 		[
 			SNew(SCheckBox)
-			.Style( FEditorStyle::Get(), "ToggleButtonCheckbox" )
+			.Style( FAppStyle::Get(), "ToggleButtonCheckbox" )
 			.ToolTipText( LOCTEXT( "EBYGStyleDisplayType::Block", "Block display" ) )
 			.Padding( ContentPadding )
 			.OnCheckStateChanged( this, &FBYGStyleDisplayTypeCustomization::HandleCheckStateChanged, PropertyHandle, EBYGStyleDisplayType::Block )
@@ -50,7 +50,7 @@ void FBYGStyleDisplayTypeCustomization::CustomizeHeader( TSharedRef<IPropertyHan
 		.Padding(OuterPadding)
 		[
 			SNew( SCheckBox )
-			.Style( FEditorStyle::Get(), "ToggleButtonCheckbox" )
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox" )
 			.ToolTipText( LOCTEXT( "EBYGStyleDisplayType::Inline", "Inline display" ) )
 			.Padding(ContentPadding)
 			.OnCheckStateChanged( this, &FBYGStyleDisplayTypeCustomization::HandleCheckStateChanged, PropertyHandle, EBYGStyleDisplayType::Inline )

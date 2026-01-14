@@ -243,7 +243,7 @@ void SBYGRichTextTestWindow::Construct( const FArguments& InArgs )
 	[
 		SNew( SBorder )
 		.Padding( 3 )
-		.BorderImage( FEditorStyle::GetBrush( "ToolPanel.GroupBorder" ) )
+		.BorderImage(FAppStyle::GetBrush( "ToolPanel.GroupBorder" ) )
 		[
 			SNew( SScrollBox )
 			.Orientation( Orient_Vertical )

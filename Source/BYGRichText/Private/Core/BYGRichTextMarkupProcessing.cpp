@@ -70,7 +70,7 @@ void FBYGTextBlockInfo::OverwriteProperties( const FName& StyleName, const TArra
 		return;
 
 	StylesApplied.Add( StyleName );
-
+	//TODO nullptr check
 	for ( const UBYGRichTextPropertyBase* Prop : NewBlockProperties )
 	{
 		BlockPropertiesMap.Add( Prop->GetTypeID(), Prop );
@@ -522,7 +522,7 @@ FString FBYGRichTextMarkupParser::ConvertInputToInlineXML( const FString& Input 
 	{
 		// Default style overwrites any auto-filled properties, and cannot be popped
 		for ( const UBYGRichTextPropertyBase* Prop : DefaultStyle->Properties )
-		{
+		{			
 			StyleStack.SetRootProperty( Prop, true );
 		}
 	}

@@ -11,6 +11,7 @@
 #include "Widget/BYGRichTextBlock.h"
 #include "Settings/BYGRichTextStylesheet.h"
 #include <UObject/GCObject.h>
+#include "UObject/ObjectPtr.h"
 
 class SBYGRichTextTestWindow 
 	: public SCompoundWidget
@@ -44,7 +45,7 @@ public:
 	//virtual void Tick(const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime) override;
 
 protected:
-	UBYGRichTextBlock* RichTextBlock = nullptr;
-	UBYGRichTextStylesheet* Stylesheet = nullptr;
+	TObjectPtr<class UBYGRichTextBlock> RichTextBlock = nullptr;
+	TObjectPtr<class UBYGRichTextStylesheet> Stylesheet = nullptr;
 
 };

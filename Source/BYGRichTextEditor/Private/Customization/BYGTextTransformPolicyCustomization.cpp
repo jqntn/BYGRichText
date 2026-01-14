@@ -29,7 +29,7 @@ void FBYGTextTransformPolicyCustomization::CustomizeHeader( TSharedRef<IProperty
 		.Padding( OuterPadding )
 		[
 			SNew( SCheckBox )
-			.Style( FEditorStyle::Get(), "ToggleButtonCheckbox" )
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox" )
 			.ToolTipText( LOCTEXT( "ETextTransformPolicy::Upper", "Uppercase" ) )
 			.Padding( ContentPadding )
 			.OnCheckStateChanged( this, &FBYGTextTransformPolicyCustomization::HandleCheckStateChanged, PropertyHandle, ETextTransformPolicy::ToUpper )
@@ -50,7 +50,7 @@ void FBYGTextTransformPolicyCustomization::CustomizeHeader( TSharedRef<IProperty
 		.Padding( OuterPadding )
 		[
 			SNew( SCheckBox )
-			.Style( FEditorStyle::Get(), "ToggleButtonCheckbox" )
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox" )
 			.ToolTipText( LOCTEXT( "ETextTransformPolicy::Lower", "Lowercase" ) )
 			.Padding( ContentPadding )
 			.OnCheckStateChanged( this, &FBYGTextTransformPolicyCustomization::HandleCheckStateChanged, PropertyHandle, ETextTransformPolicy::ToLower )

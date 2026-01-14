@@ -96,7 +96,7 @@ void FBYGRichTextModule::AddReferencedObjects( FReferenceCollector& Collector )
 
 FString FBYGRichTextModule::GetReferencerName() const
 {
-	return TEXT("FBYGRichTextModule"); // 返回类名作为标识
+	return TEXT("FBYGRichTextModule");
 }
 
 #undef LOCTEXT_NAMESPACE

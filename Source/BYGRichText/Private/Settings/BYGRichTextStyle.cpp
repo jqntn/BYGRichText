@@ -73,7 +73,7 @@ void UBYGRichTextStyle::SortProperties()
 	if ( bSomethingChanged )
 	{
 		UE_LOG( LogTemp, Warning, TEXT( "Sorting reordered something" ) );
-        Properties = NewProperties;
+        //Properties = NewProperties;
 	}
 #endif
 }

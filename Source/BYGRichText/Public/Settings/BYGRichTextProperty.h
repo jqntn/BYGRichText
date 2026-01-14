@@ -15,6 +15,7 @@
 #include "BYGRichTextModule.h"
 #include "BYGRichTextRuntimeSettings.h"
 #include "BYGStyleDisplayType.h"
+#include "Widget/BulletRichLine.h"
 
 #include "BYGRichTextProperty.generated.h"
 
@@ -686,6 +687,81 @@ protected:
 	FBYGGetWidget ToolTipWidgetDelegate;
 };
 
+
+UCLASS( EditInlineNew, meta = ( DisplayName = "Bulletpoint", DisplayOrder = 53 ) )
+class BYGRICHTEXT_API UBYGRichTextBulletpointProperty : public UBYGRichTextPropertyBase
+{
+	GENERATED_BODY()
+
+public:
+	UBYGRichTextBulletpointProperty( const FObjectInitializer& ObjectInitializer )
+		: Super( ObjectInitializer )
+	{
+		TypeID = "Bulletpoint";
+	}
+	virtual TSharedRef<SWidget> WrapBlock( TSharedRef<SWidget>& TextBlock, UBYGRichTextBlock* OuterBlock, const TMap<FString, FString>& Payload ) const override
+	{
+		TSharedRef<SRichTextBlock> RTTextBlock = StaticCastSharedRef<SRichTextBlock>(TextBlock);
+
+        RTTextBlock.Get().SetAutoWrapText(true);        
+		RTTextBlock.Get().SetWrapTextAt(0.0f);
+		RTTextBlock.Get().SetWrappingPolicy(ETextWrappingPolicy::DefaultWrapping);
+
+		//return SNew(SBox)
+		//	.HAlign(HAlign_Fill)
+		//	// pick one:
+		//	//.WidthOverride(DesiredWidth)
+		//	//.MaxDesiredWidth(600.f)
+		//	[
+		//		SNew(SHorizontalBox)
+		//		+ SHorizontalBox::Slot()
+		//		.AutoWidth()
+		//		.VAlign(VAlign_Top)			
+		//		[
+		//			SNew(STextBlock)
+		//				.Text(BulletpointSign)
+		//				.TextStyle(&BulletpointTextStyle)
+		//		]
+		//		+ SHorizontalBox::Slot()
+		//		.FillWidth(1.0f)
+		//		.VAlign(VAlign_Top)
+		//		.Padding(FMargin(BulletpointSpacing, 0.f, 0.f, 0.f))
+		//		[
+		//			TextBlock
+		//		]
+		//	];
+
+		auto Bullet =
+			SNew(STextBlock)
+			.Text(BulletpointSign)
+			.TextStyle(&BulletpointTextStyle);
+
+		return SNew(SBulletRichLine)
+			.BulletWidget(Bullet)
+			.ContentWidget(RTTextBlock)
+			.Spacing(BulletpointSpacing);
+
+	}
+
+	void SetSign(const FText& InSign) { BulletpointSign = InSign; };
+	void SetTextStyle(const FTextBlockStyle& InTextStyle) { BulletpointTextStyle = InTextStyle; }
+	void SetSpacing(const float InSpacing) { BulletpointSpacing = InSpacing; };
+
+	virtual bool RequiresInlineTextBlock() const { return  true; }
+protected:	
+
+		// Bulletpoint sign
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	FText BulletpointSign = FText::FromString(TEXT("•"));
+
+	// Optional style for bulletpoint sign (if not set up, falls back to TextStyle)
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	FTextBlockStyle BulletpointTextStyle;
+
+	// Distance between bulletpoint and text content
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	float BulletpointSpacing = 8.0f;
+};
 
 #if 0
 // Disabled until I implement a custom Marshaller

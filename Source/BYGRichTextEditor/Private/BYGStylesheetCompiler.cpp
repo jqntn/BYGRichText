@@ -102,7 +102,7 @@ bool FBYGStylesheetCompilerContext::ValidateGeneratedClass(UBlueprintGeneratedCl
 	const bool SuperResult = Super::ValidateGeneratedClass(Class);
 	const bool Result = false; //UWidgetBlueprint::ValidateGeneratedClass(Class);
 
-	if ( Class->ClassDefaultObject && Class->ClassDefaultObject->GetClass()->IsChildOf( UBYGRichTextStylesheet::StaticClass() ) )
+	if ( Class->GetDefaultObject() && Class->GetDefaultObject()->GetClass()->IsChildOf( UBYGRichTextStylesheet::StaticClass() ) )
 	{
 		// Do validation
 		UBYGRichTextStylesheet* Obj = Class->GetDefaultObject<UBYGRichTextStylesheet>();

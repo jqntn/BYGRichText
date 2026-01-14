@@ -116,18 +116,25 @@ void UBYGRichTextBlock::RebuildContents()
 		TSharedRef<SWidget> FinalWidget = TextBlock.ToSharedRef();
 		for ( const auto& Pair : BlockPropertiesMap )
 		{
-			FinalWidget = Pair.Value->WrapBlock( FinalWidget, this, BlockInfo.Payload );
+			FinalWidget = Pair.Value->WrapBlock( FinalWidget, this, BlockInfo.Payload );			
 		}
 
 		TextBlock->SetText( FText::FromString( BlockInfo.RawText ) );
 
 		MyRichTextBlocks.Add( TextBlock );
-
+		
 		MyVerticalBox->AddSlot()
 			.AutoHeight()
+			.HAlign(HAlign_Fill)			
 			[
-				FinalWidget
+				SNew(SBox)
+				.HAlign(HAlign_Fill)
+				[
+					FinalWidget
+				]
+				
 			];
+		
 	}
 }
 

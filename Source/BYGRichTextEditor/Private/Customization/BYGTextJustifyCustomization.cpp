@@ -29,14 +29,14 @@ void FBYGTextJustifyCustomization::CustomizeHeader(TSharedRef<IPropertyHandle> P
 		.Padding(OuterPadding)
 		[
 			SNew( SCheckBox )
-			.Style(FEditorStyle::Get(), "ToggleButtonCheckbox")
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox")
 			.ToolTipText(LOCTEXT("AlignTextLeft", "Align Text Left"))
 			.Padding(ContentPadding)
 			.OnCheckStateChanged(this, &FBYGTextJustifyCustomization::HandleCheckStateChanged, PropertyHandle, ETextJustify::Left)
 			.IsChecked(this, &FBYGTextJustifyCustomization::GetCheckState, PropertyHandle, ETextJustify::Left)
 			[
 				SNew(SImage)
-				.Image(FEditorStyle::GetBrush("HorizontalAlignment_Left"))
+				.Image(FAppStyle::GetBrush("HorizontalAlignment_Left"))
 			]
 		]
 
@@ -45,14 +45,14 @@ void FBYGTextJustifyCustomization::CustomizeHeader(TSharedRef<IPropertyHandle> P
 		.Padding(OuterPadding)
 		[
 			SNew(SCheckBox)
-			.Style(FEditorStyle::Get(), "ToggleButtonCheckbox")
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox")
 			.ToolTipText(LOCTEXT("AlignTextCenter", "Align Text Center"))
 			.Padding(ContentPadding)
 			.OnCheckStateChanged(this, &FBYGTextJustifyCustomization::HandleCheckStateChanged, PropertyHandle, ETextJustify::Center)
 			.IsChecked(this, &FBYGTextJustifyCustomization::GetCheckState, PropertyHandle, ETextJustify::Center)
 			[
 				SNew(SImage)
-				.Image(FEditorStyle::GetBrush("HorizontalAlignment_Center"))
+				.Image(FAppStyle::GetBrush("HorizontalAlignment_Center"))
 			]
 		]
 
@@ -61,14 +61,14 @@ void FBYGTextJustifyCustomization::CustomizeHeader(TSharedRef<IPropertyHandle> P
 		.Padding(OuterPadding)
 		[
 			SNew(SCheckBox)
-			.Style(FEditorStyle::Get(), "ToggleButtonCheckbox")
+			.Style(FAppStyle::Get(), "ToggleButtonCheckbox")
 			.ToolTipText(LOCTEXT("AlignTextRight", "Align Text Right"))
 			.Padding(ContentPadding)
 			.OnCheckStateChanged(this, &FBYGTextJustifyCustomization::HandleCheckStateChanged, PropertyHandle, ETextJustify::Right)
 			.IsChecked(this, &FBYGTextJustifyCustomization::GetCheckState, PropertyHandle, ETextJustify::Right)
 			[
 				SNew(SImage)
-				.Image(FEditorStyle::GetBrush("HorizontalAlignment_Right"))
+				.Image(FAppStyle::GetBrush("HorizontalAlignment_Right"))
 			]
 		]
 	];

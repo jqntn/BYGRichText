@@ -80,7 +80,7 @@ void FBYGRichTextUIStyle::Initialize()
 	const FSlateFontInfo NormalFont = DEFAULT_FONT( "Regular", FCoreStyle::RegularTextSize );
 
 
-	const FTextBlockStyle NormalText = FEditorStyle::GetWidgetStyle<FTextBlockStyle>( "NormalText" );
+	const FTextBlockStyle NormalText = FAppStyle::GetWidgetStyle<FTextBlockStyle>( "NormalText" );
 	#if 0
 	NormalText = FTextBlockStyle()
 		.SetFont( DEFAULT_FONT( "Regular", FCoreStyle::RegularTextSize ) )
