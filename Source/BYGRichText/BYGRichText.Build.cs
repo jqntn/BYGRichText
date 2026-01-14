@@ -12,6 +12,9 @@ public class BYGRichText : ModuleRules
 			new string[]
 			{
 				"Core",
+				"Slate",
+				"SlateCore",
+				"UMG",
 			}
 			);
 			
