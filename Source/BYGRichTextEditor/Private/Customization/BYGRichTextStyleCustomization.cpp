@@ -18,6 +18,8 @@
 
 #include "Settings/BYGRichTextStylesheet.h"
 #include "Settings/BYGRichTextStyle.h"
+#include "Customization/BYGTextJustifyCustomization.h"
+#include "Customization/BYGStyleDisplayTypeCustomization.h"
 
 #define LOCTEXT_NAMESPACE "BYGRichTextEditorModule"
 

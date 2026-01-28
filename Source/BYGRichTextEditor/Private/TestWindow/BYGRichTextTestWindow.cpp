@@ -5,6 +5,7 @@
 #include "BYGRichTextUIStyle.h"
 #include "Widget/BYGRichTextBlock.h"
 #include "Settings/BYGRichTextStylesheet.h"
+#include "Settings/BYGRichTextStyle.h"
 #include "Widgets/Layout/SScrollBox.h"
 #include "Engine/Font.h"
 #include "Interfaces/IPluginManager.h"

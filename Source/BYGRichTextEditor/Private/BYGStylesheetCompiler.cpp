@@ -8,6 +8,7 @@
 #include "Blueprint/WidgetTree.h"
 #include "Animation/WidgetAnimation.h"
 #include "MovieScene.h"
+#include "Settings/BYGRichTextStylesheet.h"
 
 #include "Kismet2/Kismet2NameValidators.h"
 #include "Kismet2/KismetReinstanceUtilities.h"
