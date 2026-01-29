@@ -75,7 +75,7 @@ void FBYGRichTextUIStyle::Initialize()
 	StyleSet->Set( "BYGTextTransform_Lower", new IMAGE_BRUSH( "Icons/BYGTextTransform_Lower_20x", Icon20x20 ) );
 	StyleSet->Set( "BYGTextTransform_Upper", new IMAGE_BRUSH( "Icons/BYGTextTransform_Upper_20x", Icon20x20 ) );
 
-	StyleSet->Set( "PropertySpacer", new IMAGE_BRUSH( "PropertySpacer", Spacer32x4, FLinearColor( 1, 1, 1, 0.2f ) ) );
+	StyleSet->Set( "PropertySpacer", new IMAGE_BRUSH( "Icons/BYGRichTextJustificationProperty_16x", Spacer32x4, FLinearColor( 1, 1, 1, 0.2f ) ) );
 
 	const FSlateFontInfo NormalFont = DEFAULT_FONT( "Regular", FCoreStyle::RegularTextSize );
 

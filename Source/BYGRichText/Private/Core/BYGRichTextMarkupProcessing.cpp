@@ -671,7 +671,7 @@ FString FBYGRichTextMarkupParser::ConvertInputToInlineXML( const FString& Input 
 	FlushToken( Result, CurrentToken, StyleStack, XMLElementName, CurrentPayload );
 	CurrentPayload.Empty();
 
-	UE_LOG( LogTemp, Warning, TEXT( "Result:\n%s" ), *Result );
+	// UE_LOG( LogTemp, Warning, TEXT( "Result:\n%s" ), *Result );
 
 	return Result;
 }

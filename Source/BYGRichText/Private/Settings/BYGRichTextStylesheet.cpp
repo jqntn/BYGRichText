@@ -349,10 +349,10 @@ void UBYGRichTextStylesheet::RemoveStyle( const FName& StyleID )
 void UBYGRichTextStylesheet::PostCDOContruct()
 {
 	Super::PostCDOContruct();
-	UE_LOG( LogTemp, Warning, TEXT( "Stylesheet PostCDOConstruct" ) );
+	// UE_LOG( LogTemp, Warning, TEXT( "Stylesheet PostCDOConstruct" ) );
 
 	// We need to set up default properties but if we do this, the BP save fails
-	//RebuildLookup();
+	// RebuildLookup();
 }
 
 void UBYGRichTextStylesheet::BeginDestroy()
