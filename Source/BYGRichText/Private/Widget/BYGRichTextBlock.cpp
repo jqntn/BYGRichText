@@ -73,11 +73,11 @@ void UBYGRichTextBlock::RebuildContents()
 	MyRichTextBlocks.Empty();
 	// TODO: Need to Reset each one here?
 
-	if ( !ensure( MyVerticalBox ) )
-	{
-		UE_LOG( LogTemp, Error, TEXT( "Veritcal box is null!" ) );
-		return;
-	}
+	// if ( !ensure( MyVerticalBox ) )
+	// {
+	//	 UE_LOG( LogTemp, Error, TEXT( "Veritcal box is null!" ) );
+	//	 return;
+	// }
 	MyVerticalBox->ClearChildren();
 
 	for ( const FBYGTextBlockInfo& BlockInfo : BlockInfos )
